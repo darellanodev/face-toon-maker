@@ -19,3 +19,8 @@ This is a web app to customize a toon face, for learning purposes and practice T
 ## Run the app
 
 `pnpm run dev`
+
+### Run ESLint and Prettier
+
+- `pnpm run lint` to lint all files
+- `pnpm run format` to apply formatting to all the files
