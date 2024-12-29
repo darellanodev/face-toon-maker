@@ -1,3 +1,5 @@
+import path from "path";
+import { fileURLToPath } from "url";
 import js from "@eslint/js";
 import globals from "globals";
 import react from "eslint-plugin-react";
@@ -5,16 +7,24 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import * as tseslint from "typescript-eslint";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export default [
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
-    ignores: ["dist/**", "node_modules/**", "pnpm-lock.yaml"],
+    ignores: [
+      "dist/**",
+      "node_modules/**",
+      "pnpm-lock.yaml",
+      "eslint.config.js",
+    ],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: "module",
       parser: tseslint.parser,
       parserOptions: {
-        project: "./tsconfig.eslint.json",
+        project: path.resolve(__dirname, "./tsconfig.eslint.json"),
       },
       globals: {
         ...globals.browser,
