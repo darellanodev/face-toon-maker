@@ -7,6 +7,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import * as tseslint from "typescript-eslint";
 import vitestPlugin from "@vitest/eslint-plugin";
+import testingLibrary from "eslint-plugin-testing-library";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -38,6 +39,7 @@ export default [
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       "@vitest": vitestPlugin,
+      "testing-library": testingLibrary,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -45,6 +47,7 @@ export default [
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...vitestPlugin.configs.recommended.rules,
+      ...testingLibrary.configs.react.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
