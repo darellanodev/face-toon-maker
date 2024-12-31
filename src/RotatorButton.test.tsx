@@ -9,7 +9,13 @@ describe("RotatorButton", () => {
 
   it('passes the text "my button text" to the button', () => {
     const text = "my button text";
-    render(<RotatorButton text={text} />);
+    render(<RotatorButton>{text}</RotatorButton>);
     expect(screen.getByRole("button")).toHaveTextContent("my button text");
+  });
+
+  it("passes a className to the button", () => {
+    const className = "my-button-class";
+    render(<RotatorButton className={className} />);
+    expect(screen.getByRole("button")).toHaveClass(className);
   });
 });
