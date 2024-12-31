@@ -1,13 +1,13 @@
-import React, { ComponentPropsWithRef } from "react";
+import React, { ComponentPropsWithRef } from 'react'
 
-interface RotatorButtonProps extends ComponentPropsWithRef<"button"> {
-  text?: string;
+interface RotatorButtonProps extends ComponentPropsWithRef<'button'> {
+  text?: string
 }
 
 const RotatorButton: React.FC<RotatorButtonProps> = ({
   text,
   children,
   ...props
-}) => <button {...props}>{text || children || "Default text"}</button>;
+}) => <button {...props}>{text || children || 'Default text'}</button>
 
-export default RotatorButton;
+export default RotatorButton
