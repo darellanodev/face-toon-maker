@@ -8,6 +8,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import * as tseslint from 'typescript-eslint'
 import * as vitestPlugin from '@vitest/eslint-plugin'
 import testingLibrary from 'eslint-plugin-testing-library'
+import jestPlugin from 'eslint-plugin-jest'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -31,6 +32,7 @@ export default [
       globals: {
         ...globals.browser,
         ...(vitestPlugin.environments?.['vitest-globals']?.globals || {}),
+        ...globals.jest,
       },
     },
     plugins: {
@@ -40,6 +42,7 @@ export default [
       'react-refresh': reactRefresh,
       vitest: vitestPlugin,
       'testing-library': testingLibrary,
+      jest: jestPlugin,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -48,6 +51,7 @@ export default [
       ...reactHooks.configs.recommended.rules,
       ...(vitestPlugin.configs?.recommended?.rules || {}),
       ...testingLibrary.configs.react.rules,
+      ...jestPlugin.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
@@ -59,6 +63,18 @@ export default [
       react: {
         version: 'detect',
       },
+    },
+  },
+  {
+    files: ['**/*.test.ts', '**/*.test.tsx'],
+    languageOptions: {
+      globals: globals.jest,
+    },
+    plugins: {
+      jest: jestPlugin,
+    },
+    rules: {
+      ...jestPlugin.configs.recommended.rules,
     },
   },
 ]

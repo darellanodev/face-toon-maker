@@ -4,7 +4,8 @@
         "src/**/*.ts",
         "src/**/*.tsx",
         "eslint.config.js",
-        "vite.config.ts"
+        "vite.config.ts",
+        "test-setup.ts"
     ],
     "compilerOptions": {
         "noEmit": true
