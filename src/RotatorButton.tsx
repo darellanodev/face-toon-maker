@@ -1,3 +1,7 @@
-const RotatorButton = ({ text }: { text: string }) => <button>{text}</button>;
+import { ReactNode } from "react";
+
+const RotatorButton = ({ text }: { text?: ReactNode }) => (
+  <button>{text}</button>
+);
 
 export default RotatorButton;

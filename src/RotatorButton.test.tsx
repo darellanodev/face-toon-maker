@@ -3,7 +3,7 @@ import RotatorButton from "./RotatorButton";
 
 describe("RotatorButton", () => {
   it("it renders a <button>", () => {
-    render(<RotatorButton text="" />);
+    render(<RotatorButton />);
     expect(screen.getByRole("button")).toBeInTheDocument();
   });
 
