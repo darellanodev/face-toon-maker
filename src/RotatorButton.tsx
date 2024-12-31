@@ -8,6 +8,6 @@ const RotatorButton: React.FC<RotatorButtonProps> = ({
   text,
   children,
   ...props
-}) => <button {...props}>{text || children}</button>;
+}) => <button {...props}>{text || children || "Default text"}</button>;
 
 export default RotatorButton;
