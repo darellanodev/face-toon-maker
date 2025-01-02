@@ -10,4 +10,8 @@ describe('RotatorImage', () => {
     render(<RotatorImage />)
     expect(screen.getByRole('img')).toBeInTheDocument()
   })
+  it('render a <figcaption>', () => {
+    render(<RotatorImage />)
+    expect(screen.getByTestId('figcaption')).toBeInTheDocument()
+  })
 })
