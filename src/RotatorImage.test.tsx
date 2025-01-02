@@ -6,4 +6,8 @@ describe('RotatorImage', () => {
     render(<RotatorImage />)
     expect(screen.getByRole('figure')).toBeInTheDocument()
   })
+  it('render a <img>', () => {
+    render(<RotatorImage />)
+    expect(screen.getByRole('img')).toBeInTheDocument()
+  })
 })
