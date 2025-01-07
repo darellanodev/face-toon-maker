@@ -1,6 +1,6 @@
-const RotatorImage = () => (
+const RotatorImage = ({ imgUrl }: { imgUrl?: string }) => (
   <figure>
-    <img />
+    <img src={imgUrl} />
     <figcaption data-testid="figcaption"></figcaption>
   </figure>
 )
