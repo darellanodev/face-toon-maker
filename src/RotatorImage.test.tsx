@@ -29,4 +29,16 @@ describe('RotatorImage', () => {
       `Image 1 by Author 1`,
     )
   })
+  it('passes other props like the className and data properties', () => {
+    const props = {
+      className: 'my-image-1',
+      'data-test-name': 'My image 1',
+    }
+    render(<RotatorImage {...props} />)
+    expect(screen.getByRole('figure')).toHaveClass(props.className)
+    expect(screen.getByRole('figure')).toHaveAttribute(
+      'data-test-name',
+      props['data-test-name'],
+    )
+  })
 })
