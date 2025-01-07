@@ -19,4 +19,14 @@ describe('RotatorImage', () => {
     render(<RotatorImage imgUrl={imgUrl} />)
     expect(screen.getByRole('img')).toHaveAttribute('src', imgUrl)
   })
+  it('passes a description and the author to the <figcaption>', () => {
+    const props = {
+      description: 'Image 1',
+      author: 'Author 1',
+    }
+    render(<RotatorImage {...props} />)
+    expect(screen.getByTestId('figcaption')).toHaveTextContent(
+      `Image 1 by Author 1`,
+    )
+  })
 })
