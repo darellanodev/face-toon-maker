@@ -1,5 +1,6 @@
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import RotatorImage from './RotatorImage'
+import RotatorButton from './RotatorButton'
 
 type Image = {
   imgUrl?: string
@@ -8,9 +9,20 @@ type Image = {
 }
 
 const Rotator = ({ images }: { images?: Image[] }) => {
+  const [imageIndex, setImageIndex] = useState(0)
   return (
     <div data-testid="rotator">
-      <RotatorImage {...images?.[0]} />
+      <RotatorImage {...images?.[imageIndex]} />
+      <RotatorButton
+        data-testid="next-button"
+        onClick={() => {
+          if (!images) {
+            return
+          }
+          setImageIndex((i: number) => (i + 1) % images.length)
+        }}>
+        Next
+      </RotatorButton>
     </div>
   )
 }

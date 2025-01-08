@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import Rotator from './Rotator'
 
 const images = [
@@ -30,5 +31,18 @@ describe('Rotator', () => {
       'src',
       './assets/image1.png',
     )
+  })
+  it('advances the next image when the user presses the button', async () => {
+    render(<Rotator images={images} />)
+    const img = screen.getByRole('img')
+    const button = screen.getByRole('button')
+    const user = userEvent.setup()
+
+    await user.click(button)
+    expect(img).toHaveAttribute('src', './assets/image2.png')
+    await user.click(button)
+    expect(img).toHaveAttribute('src', './assets/image3.png')
+    await user.click(button)
+    expect(img).toHaveAttribute('src', './assets/image1.png')
   })
 })
