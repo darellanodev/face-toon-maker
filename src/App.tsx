@@ -1,7 +1,8 @@
 import './App.css'
+import ExampleRotator from './ExampleRotator'
 
 function App() {
-  return null
+  return <ExampleRotator />
 }
 
 export default App
