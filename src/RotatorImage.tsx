@@ -7,6 +7,11 @@ const StyledImage = styled.img`
   height: 200px;
 `
 
+const StyledFigure = styled.figure`
+  display: flex;
+  align-items: center;
+`
+
 const RotatorImage = ({
   imgUrl,
   description,
@@ -17,12 +22,12 @@ const RotatorImage = ({
   description?: ReactNode
   author?: ReactNode
 } & ComponentPropsWithRef<'figure'>) => (
-  <figure {...rest}>
+  <StyledFigure {...rest}>
     <StyledImage src={imgUrl} />
     <figcaption data-testid="figcaption">
       {description} by <strong>{author}</strong>
     </figcaption>
-  </figure>
+  </StyledFigure>
 )
 
 export default RotatorImage
