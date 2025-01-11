@@ -1,10 +1,22 @@
 import { ComponentPropsWithRef, ReactNode } from 'react'
 import styled from 'styled-components'
 
-const StyledImage = styled.img`
+type RotatorImageProps = {
+  imgUrl?: string
+  /** @default '200px' */
+  imgHeight?: string
+  description?: ReactNode
+  author?: ReactNode
+} & ComponentPropsWithRef<'figure'>
+
+type ImageProps = {
+  $height: RotatorImageProps['imgHeight']
+}
+
+const StyledImage = styled.img<ImageProps>`
   object-fit: contain;
   width: 100%;
-  height: 200px;
+  height: ${(props) => props.$height};
 `
 
 const StyledFigure = styled.figure`
@@ -14,16 +26,13 @@ const StyledFigure = styled.figure`
 
 const RotatorImage = ({
   imgUrl,
+  imgHeight = '200px',
   description,
   author,
   ...rest
-}: {
-  imgUrl?: string
-  description?: ReactNode
-  author?: ReactNode
-} & ComponentPropsWithRef<'figure'>) => (
+}: RotatorImageProps) => (
   <StyledFigure {...rest}>
-    <StyledImage src={imgUrl} />
+    <StyledImage src={imgUrl} $height={imgHeight} />
     <figcaption data-testid="figcaption">
       {description} by <strong>{author}</strong>
     </figcaption>
