@@ -1,7 +1,7 @@
 import { ComponentPropsWithRef, ReactNode } from 'react'
 import styled from 'styled-components'
 
-type RotatorImageProps = {
+export type RotatorImageProps = {
   imgUrl?: string
   /** @default '200px' */
   imgHeight?: string

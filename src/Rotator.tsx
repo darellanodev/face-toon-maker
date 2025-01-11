@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react'
-import RotatorImage from './RotatorImage'
+import RotatorImage, { RotatorImageProps } from './RotatorImage'
 import RotatorButton from './RotatorButton'
 import styled from 'styled-components'
 
@@ -15,7 +15,12 @@ const StyledDiv = styled.div`
   justify-content: center;
 `
 
-const Rotator = ({ images }: { images?: Image[] }) => {
+type RotatorProps = {
+  images?: Image[]
+  imgHeight?: RotatorImageProps['imgHeight']
+}
+
+const Rotator = ({ images, imgHeight }: RotatorProps) => {
   const [imageIndex, setImageIndex] = useState(0)
   return (
     <StyledDiv data-testid="rotator">
@@ -29,7 +34,7 @@ const Rotator = ({ images }: { images?: Image[] }) => {
         }}>
         Next
       </RotatorButton>
-      <RotatorImage {...images?.[imageIndex]} />
+      <RotatorImage imgHeight={imgHeight} {...images?.[imageIndex]} />
     </StyledDiv>
   )
 }

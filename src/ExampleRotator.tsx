@@ -2,7 +2,7 @@ import Rotator from './Rotator'
 import images from './images'
 
 function ExampleRotator() {
-  return <Rotator images={images} />
+  return <Rotator imgHeight="150px" images={images} />
 }
 
 export default ExampleRotator
