@@ -1,6 +1,7 @@
 import { ReactNode, useState } from 'react'
 import RotatorImage from './RotatorImage'
 import RotatorButton from './RotatorButton'
+import styled from 'styled-components'
 
 type Image = {
   imgUrl?: string
@@ -8,11 +9,16 @@ type Image = {
   author?: ReactNode
 }
 
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const Rotator = ({ images }: { images?: Image[] }) => {
   const [imageIndex, setImageIndex] = useState(0)
   return (
-    <div data-testid="rotator">
-      <RotatorImage {...images?.[imageIndex]} />
+    <StyledDiv data-testid="rotator">
       <RotatorButton
         data-testid="next-button"
         onClick={() => {
@@ -23,7 +29,8 @@ const Rotator = ({ images }: { images?: Image[] }) => {
         }}>
         Next
       </RotatorButton>
-    </div>
+      <RotatorImage {...images?.[imageIndex]} />
+    </StyledDiv>
   )
 }
 
