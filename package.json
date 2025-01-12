@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . && prettier --list-different .",
-    "format": "eslint --fix . && prettier --loglevel warn --write .",
+    "lint:js": "eslint . && prettier --list-different .",
+    "lint:css": "stylelint \"**/*.{ts,tsx}\"",
+    "lint": "npm run lint:js && npm run lint:css",
+    "format:js": "eslint --fix . && prettier --loglevel warn --write .",
+    "format:css": "stylelint \"**/*.{ts,tsx}\" --fix",
+    "format": "npm run format:js && npm run format:css",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"
@@ -43,10 +47,14 @@
     "happy-dom": "^16.1.0",
     "jest": "^29.7.0",
     "jsdom": "^25.0.1",
+    "postcss-styled-syntax": "^0.7.0",
     "prettier": "^3.4.2",
+    "stylelint": "^16.13.0",
+    "stylelint-config-recommended": "^15.0.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.6",
     "vitest": "^2.1.8"
   }
 }
+

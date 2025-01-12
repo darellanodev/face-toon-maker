@@ -22,5 +22,14 @@ This is a web app to customize a toon face, for learning purposes and practice T
 
 ### Run ESLint and Prettier
 
-- `pnpm run lint` to lint all files
-- `pnpm run format` to apply formatting to all the files
+#### For linting
+
+- `pnpm run lint:js` to lint all js files
+- `pnpm run lint:css` to lint styled components with stylelint
+- `pnpm run lint` to lint both
+
+#### For formatting
+
+- `pnpm run format:js` to format all js files
+- `pnpm run format:css` to format styled components with stylelint
+- `pnpm run format` to format both

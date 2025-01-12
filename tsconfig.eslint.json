@@ -5,7 +5,8 @@
     "src/**/*.tsx",
     "eslint.config.js",
     "vite.config.ts",
-    "test-setup.ts"
+    "test-setup.ts",
+    "stylelint.config.js"
   ],
   "compilerOptions": {
     "noEmit": true
