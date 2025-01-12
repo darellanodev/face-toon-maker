@@ -18,7 +18,11 @@ This is a web app to customize a toon face, for learning purposes and practice T
 
 ## Run the app
 
-`pnpm run dev`
+`pnpm run dev` or execute the `run.sh` shell script
+
+## Run the tests
+
+`pnpm run test` or execute the `run_tests.sh` shell script
 
 ### Run ESLint and Prettier
 
