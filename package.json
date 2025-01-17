@@ -13,8 +13,8 @@
     "format:css": "stylelint \"**/*.{ts,tsx}\" --fix",
     "format": "npm run format:js && npm run format:css",
     "preview": "vite preview",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "vitest run --config vitest.config.ts",
+    "test:watch": "vitest --config vitest.config.ts"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -53,7 +53,7 @@
     "stylelint-config-recommended": "^15.0.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.6",
+    "vite": "^6.0.7",
     "vitest": "^2.1.8"
   }
 }
