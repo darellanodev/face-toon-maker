@@ -12,6 +12,10 @@ This is a web app to customize a toon face, for learning purposes and practice T
 
 ![face-toon-maker](https://raw.githubusercontent.com/darellanodev/face-toon-maker/refs/heads/main/img-github-readme/mockup.png)
 
+## Try it online
+
+<https://darellanodev.github.io/tryitonline/facetoonmaker/index.html>
+
 ## Install the app
 
 `pnpm install`
