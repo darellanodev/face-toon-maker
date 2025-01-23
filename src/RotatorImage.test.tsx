@@ -41,4 +41,14 @@ describe('RotatorImage', () => {
       props['data-test-name'],
     )
   })
+  it('uses the expected static styles', () => {
+    render(<RotatorImage />)
+    expect(screen.getByRole('img')).toHaveStyle({ 'object-fit': 'contain' })
+    expect(screen.getByRole('img')).toHaveStyle({ width: '100%' })
+  })
+  it('uses imgHeight as the height of the <img>', () => {
+    const imgHeight = '123px'
+    render(<RotatorImage imgHeight={imgHeight} />)
+    expect(screen.getByRole('img')).toHaveStyle({ height: imgHeight })
+  })
 })
