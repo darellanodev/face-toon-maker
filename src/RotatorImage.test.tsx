@@ -1,5 +1,6 @@
+import styled from 'styled-components'
 import { render, screen } from '@testing-library/react'
-import RotatorImage from './RotatorImage'
+import RotatorImage, { StyledImage } from './RotatorImage'
 
 describe('RotatorImage', () => {
   it('renders a <figure>', () => {
@@ -50,5 +51,15 @@ describe('RotatorImage', () => {
     const imgHeight = '123px'
     render(<RotatorImage imgHeight={imgHeight} />)
     expect(screen.getByRole('img')).toHaveStyle({ height: imgHeight })
+  })
+  it('allows styles to be overridden with ImgComponent', () => {
+    const TestImg = styled(StyledImage)`
+      width: auto;
+      object-fit: fill;
+    `
+    render(<RotatorImage ImgComponent={TestImg} imgHeight={'250px'} />)
+    expect(screen.getByRole('img')).toHaveStyle({ width: 'auto' })
+    expect(screen.getByRole('img')).toHaveStyle({ height: '250px' })
+    expect(screen.getByRole('img')).toHaveStyle({ 'object-fit': 'fill' })
   })
 })
