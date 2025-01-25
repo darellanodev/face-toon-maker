@@ -8,9 +8,9 @@ This is a web app to customize a toon face, for learning purposes and practice T
 
 - <https://github.com/darellanodev/face-toon-maker>
 
-## Mockup
+## Screenshots
 
-![face-toon-maker](https://raw.githubusercontent.com/darellanodev/face-toon-maker/refs/heads/main/img-github-readme/mockup.png)
+![face-toon-maker](https://raw.githubusercontent.com/darellanodev/face-toon-maker/refs/heads/main/img-github-readme/screenshot.png)
 
 ## Try it online
 
