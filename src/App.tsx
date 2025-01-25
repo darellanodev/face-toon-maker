@@ -1,8 +1,8 @@
 import './App.css'
-import ExampleRotator from './ExampleRotator'
+import EyesRotator from './EyesRotator'
 
 function App() {
-  return <ExampleRotator />
+  return <EyesRotator />
 }
 
 export default App
