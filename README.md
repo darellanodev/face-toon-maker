@@ -8,6 +8,14 @@ This is a web app to customize a toon face, for learning purposes and practice T
 
 - <https://github.com/darellanodev/face-toon-maker>
 
+## Technologies
+
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![ESLint](https://img.shields.io/badge/eslint-%234B32C3.svg?style=flat&logo=eslint&logoColor=white)](https://eslint.org)
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)](https://reactjs.org)
+[![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat&logo=prettier&logoColor=black)](https://prettier.io)
+[![Vitest](https://img.shields.io/badge/vitest-%23646CFF.svg?style=flat&logo=vitest&logoColor=white)](https://vitest.dev)
+
 ## Screenshots
 
 ![face-toon-maker](https://raw.githubusercontent.com/darellanodev/face-toon-maker/refs/heads/main/img-github-readme/screenshot.png)
