@@ -45,4 +45,20 @@ describe('Rotator', () => {
     await user.click(button)
     expect(img).toHaveAttribute('src', './assets/image1.png')
   })
+
+  it('passes a custom image component to the Rotator', () => {
+    const CustomImageComponent = () => <img data-testid="My test image" />
+    render(
+      <Rotator images={images} CustomImageComponent={CustomImageComponent} />,
+    )
+    expect(screen.getByRole('img')).toHaveAttribute(
+      'data-testid',
+      'My test image',
+    )
+  })
+  it('passes custom image height to the Rotator', () => {
+    const customImageHeight = '111px'
+    render(<Rotator images={images} imgHeight={customImageHeight} />)
+    expect(screen.getByRole('img')).toHaveStyle({ height: '111px' })
+  })
 })
