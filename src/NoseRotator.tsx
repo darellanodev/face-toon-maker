@@ -3,7 +3,11 @@ import noseImages from './noseImages'
 
 function NoseRotator() {
   return (
-    <Rotator buttonText="Change nose" imgHeight="150px" images={noseImages} />
+    <Rotator
+      buttonText="Change nose 👃"
+      imgHeight="150px"
+      images={noseImages}
+    />
   )
 }
 

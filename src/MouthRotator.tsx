@@ -3,7 +3,11 @@ import mouthImages from './mouthImages'
 
 function MouthRotator() {
   return (
-    <Rotator buttonText="Change mouth" imgHeight="150px" images={mouthImages} />
+    <Rotator
+      buttonText="Change mouth 👄"
+      imgHeight="150px"
+      images={mouthImages}
+    />
   )
 }
 

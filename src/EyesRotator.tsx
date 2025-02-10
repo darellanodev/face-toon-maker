@@ -3,7 +3,11 @@ import eyesImages from './eyesImages'
 
 function EyesRotator() {
   return (
-    <Rotator buttonText="Change eyes" imgHeight="150px" images={eyesImages} />
+    <Rotator
+      buttonText="Change eyes 👀"
+      imgHeight="150px"
+      images={eyesImages}
+    />
   )
 }
 
