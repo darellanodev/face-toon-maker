@@ -61,4 +61,9 @@ describe('Rotator', () => {
     render(<Rotator images={images} imgHeight={customImageHeight} />)
     expect(screen.getByRole('img')).toHaveStyle({ height: '111px' })
   })
+  it('passes custom text to the button of the Rotator', () => {
+    const buttonText = 'custom text'
+    render(<Rotator buttonText={buttonText} />)
+    expect(screen.getByRole('button')).toHaveTextContent('custom text')
+  })
 })
