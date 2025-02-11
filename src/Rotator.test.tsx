@@ -6,17 +6,17 @@ const images = [
   {
     imgUrl: './assets/image1.png',
     description: 'Image 1',
-    author: 'Author 1',
+    author: 'darellanodev',
   },
   {
     imgUrl: './assets/image2.png',
     description: 'Image 2',
-    author: 'Author 2',
+    author: 'darellanodev',
   },
   {
     imgUrl: './assets/image3.png',
     description: 'Image 3',
-    author: 'Author 3',
+    author: 'darellanodev',
   },
 
   {
