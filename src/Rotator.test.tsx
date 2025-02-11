@@ -18,6 +18,12 @@ const images = [
     description: 'Image 3',
     author: 'Author 3',
   },
+
+  {
+    imgUrl: './assets/image4.png',
+    description: 'Image 4',
+    author: 'KiRZeN24',
+  },
 ]
 
 describe('Rotator', () => {
@@ -42,6 +48,8 @@ describe('Rotator', () => {
     expect(img).toHaveAttribute('src', './assets/image2.png')
     await user.click(button)
     expect(img).toHaveAttribute('src', './assets/image3.png')
+    await user.click(button)
+    expect(img).toHaveAttribute('src', './assets/image4.png')
     await user.click(button)
     expect(img).toHaveAttribute('src', './assets/image1.png')
   })
