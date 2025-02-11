@@ -14,4 +14,9 @@ export default [
     description: 'Image 3',
     author: 'Author 3',
   },
+  {
+    imgUrl: './img/mouth/image4.png',
+    description: 'Image 4',
+    author: 'KiRZeN24',
+  },
 ]
