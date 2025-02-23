@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import { render, screen } from '@testing-library/react'
 import RotatorImage, { StyledImage } from './RotatorImage'
+import { styleSheetSerializer } from 'jest-styled-components'
+
+expect.addSnapshotSerializer(styleSheetSerializer)
 
 describe('RotatorImage', () => {
   it('renders a <figure>', () => {
@@ -61,5 +64,9 @@ describe('RotatorImage', () => {
     expect(screen.getByRole('img')).toHaveStyle({ width: 'auto' })
     expect(screen.getByRole('img')).toHaveStyle({ height: '250px' })
     expect(screen.getByRole('img')).toHaveStyle({ 'object-fit': 'fill' })
+  })
+  it('matches snapshot', () => {
+    render(<RotatorImage />)
+    expect(screen.getByRole('figure')).toMatchSnapshot()
   })
 })
