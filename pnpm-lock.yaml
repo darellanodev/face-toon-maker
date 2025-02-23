@@ -90,6 +90,9 @@ importers:
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.10.2)
+      jest-styled-components:
+        specifier: ^7.2.0
+        version: 7.2.0(styled-components@6.1.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -2223,6 +2226,12 @@ packages:
   jest-snapshot@29.7.0:
     resolution: {integrity: sha512-Rm0BMWtxBcioHr1/OX5YCP8Uov4riHvKPknOGs804Zg9JGZgmIBkbtlxJC/7Z4msKYVbIJtfU+tKb8xlYNfdkw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+
+  jest-styled-components@7.2.0:
+    resolution: {integrity: sha512-gwyyveNjvuRA0pyhbQoydXZllLZESs2VuL5fXCabzh0buHPAOUfANtW7n5YMPmdC0sH3VB7h2eUGZ23+tjvaBA==}
+    engines: {node: '>= 12'}
+    peerDependencies:
+      styled-components: '>= 5'
 
   jest-util@29.7.0:
     resolution: {integrity: sha512-z6EbKajIpqGKU56y5KBUgy1dt1ihhQJgWzUlZHArA/+X2ad7Cb5iF+AK1EWVL/Bo7Rz9uurpqw6SiBCefUbCGA==}
@@ -5706,6 +5715,11 @@ snapshots:
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
+
+  jest-styled-components@7.2.0(styled-components@6.1.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+    dependencies:
+      '@adobe/css-tools': 4.4.1
+      styled-components: 6.1.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   jest-util@29.7.0:
     dependencies:
