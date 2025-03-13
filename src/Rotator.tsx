@@ -1,7 +1,8 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 import RotatorImage, { RotatorImageProps } from './RotatorImage'
 import RotatorButton from './RotatorButton'
 import styled from 'styled-components'
+import { useImageRotator } from './useImageRotator'
 
 type Image = {
   imgUrl?: string
@@ -23,22 +24,15 @@ type RotatorProps = {
 }
 
 const Rotator = ({
-  images,
+  images = [],
   CustomImageComponent,
   imgHeight,
   buttonText,
 }: RotatorProps) => {
-  const [imageIndex, setImageIndex] = useState(0)
+  const { imageIndex, nextImage } = useImageRotator(images.length)
   return (
     <StyledDiv data-testid="rotator">
-      <RotatorButton
-        data-testid="next-button"
-        onClick={() => {
-          if (!images) {
-            return
-          }
-          setImageIndex((i: number) => (i + 1) % images.length)
-        }}>
+      <RotatorButton data-testid="next-button" onClick={nextImage}>
         {buttonText}
       </RotatorButton>
       <RotatorImage
