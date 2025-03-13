@@ -1,3 +1,4 @@
+import { vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Rotator from './Rotator'
@@ -25,6 +26,39 @@ const images = [
     author: 'KiRZeN24',
   },
 ]
+
+describe('With controlled imageIndex', () => {
+  const onImageIndexChange = vi.fn()
+  const renderRotatorWithImageIndex = () => {
+    render(
+      <Rotator
+        images={images}
+        onImageIndexChange={onImageIndexChange}
+        imageIndex={1}
+      />,
+    )
+  }
+  beforeEach(() => {
+    onImageIndexChange.mockReset()
+  })
+  it('shows the image corresponding to the imageIndex', () => {
+    renderRotatorWithImageIndex()
+    expect(screen.getByRole('img')).toHaveAttribute(
+      'src',
+      './assets/image2.png',
+    )
+  })
+  it('calls onImageIndexChange when the user presses the next button', async () => {
+    renderRotatorWithImageIndex()
+    const img = screen.getByRole('img')
+    const nextButton = screen.getByRole('button')
+    const user = userEvent.setup()
+    await user.click(nextButton)
+
+    expect(img).toHaveAttribute('src', './assets/image3.png')
+    expect(onImageIndexChange).toHaveBeenCalledWith(2)
+  })
+})
 
 describe('Rotator', () => {
   it('renders a <div>', () => {
