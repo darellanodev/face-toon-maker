@@ -1,15 +1,19 @@
 import { useState } from 'react'
 
-export const useImageRotator = (imagesLength: number) => {
-  const [imageIndex, setImageIndex] = useState(0)
+export const useImageRotator = (
+  imagesLength: number,
+  initialIndex?: number,
+  onImageIndexChange?: (newIndex: number) => void,
+) => {
+  const [imageIndex, setImageIndex] = useState(initialIndex ?? 0)
 
   const nextImage = () => {
     if (imagesLength > 0) {
-      setImageIndex(
-        (currentImageIndex) => (currentImageIndex + 1) % imagesLength,
-      )
+      const newIndex = (imageIndex + 1) % imagesLength
+      setImageIndex(newIndex)
+      onImageIndexChange?.(newIndex)
     }
   }
 
-  return { imageIndex, nextImage }
+  return { imageIndex, nextImage, setImageIndex }
 }

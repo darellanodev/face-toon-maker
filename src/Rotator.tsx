@@ -18,6 +18,8 @@ const StyledDiv = styled.div`
 
 type RotatorProps = {
   images?: Image[]
+  imageIndex?: number
+  onImageIndexChange?: (newImageIndex: number) => void
   CustomImageComponent?: RotatorImageProps['ImgComponent']
   imgHeight?: RotatorImageProps['imgHeight']
   buttonText?: string
@@ -25,11 +27,17 @@ type RotatorProps = {
 
 const Rotator = ({
   images = [],
+  imageIndex: imageIndexProp,
+  onImageIndexChange,
   CustomImageComponent,
   imgHeight,
   buttonText,
 }: RotatorProps) => {
-  const { imageIndex, nextImage } = useImageRotator(images.length)
+  const { imageIndex, nextImage } = useImageRotator(
+    images.length,
+    imageIndexProp,
+    onImageIndexChange,
+  )
   return (
     <StyledDiv data-testid="rotator">
       <RotatorButton data-testid="next-button" onClick={nextImage}>
