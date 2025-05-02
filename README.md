@@ -22,7 +22,7 @@ This is a web app to customize a toon face, for learning purposes and practice T
 
 ## Try it online
 
-<https://darellanodev.github.io/tryitonline/facetoonmaker/index.html>
+<https://darellanodev.github.io/face-toon-maker/>
 
 ## Install the app
 
