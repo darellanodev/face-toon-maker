@@ -8,10 +8,10 @@
     "build": "tsc -b && vite build",
     "lint:js": "eslint . && prettier --list-different .",
     "lint:css": "stylelint \"**/*.{ts,tsx}\"",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "pnpm run lint:js && pnpm run lint:css",
     "format:js": "eslint --fix . && prettier --loglevel warn --write .",
     "format:css": "stylelint \"**/*.{ts,tsx}\" --fix",
-    "format": "npm run format:js && npm run format:css",
+    "format": "pnpm run format:js && pnpm run format:css",
     "preview": "vite preview",
     "test": "vitest run --config vitest.config.ts",
     "test:watch": "vitest --config vitest.config.ts"
